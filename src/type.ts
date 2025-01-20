@@ -22,7 +22,17 @@ async function quicktypeJSONSchema(targetLanguage: string, typeName: string, jso
   })
 }
 
-export async function getType(typeName: string, jsonString: string) {
+export async function getType(typeName: string, json: any) {
+  const seen = new Set()
+  const jsonString = JSON.stringify(json, (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (seen.has(value)) {
+        return // 跳过循环引用
+      }
+      seen.add(value)
+    }
+    return value
+  }, 2)
   const { lines } = await quicktypeJSONSchema('TypeScript', typeName, jsonString)
   return lines.join('\n')
 }
