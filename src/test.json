@@ -1,0 +1,8 @@
+{
+  "/approve/v1/appApproveRecord/view": {
+    "post": {
+      "description": "预览审批步骤",
+      "responses": "export interface ResponseType {\n    steps?: Step[];\n    [property: string]: any;\n}\n\nexport interface Step {\n    /**\n     * 类型\n     */\n    type?:  string;\n    users?: User[];\n    [property: string]: any;\n}\n\nexport interface User {\n    id?: string;\n    /**\n     * 昵称\n     */\n    nickname?: string;\n    [property: string]: any;\n}\n"
+    }
+  }
+}
