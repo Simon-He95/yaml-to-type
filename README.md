@@ -1,6 +1,6 @@
 ## Vitesse
 
-通过上传 Swagger 的 yaml 文件, 在线生成对应的接口 api 的 ts 类型
+通过上传 Swagger 的 yaml 文件, 在线生成对应的接口 api 的 ts 类型 (支持选择指定的 api)
 
 ## :coffee:
 
