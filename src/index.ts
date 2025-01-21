@@ -1,19 +1,22 @@
-import fs from 'node:fs'
+// import fs from 'node:fs'
 import { stringify } from 'flatted'
 import { parse } from 'yaml'
 import { getType } from './type'
 
-export function parserYaml(yamlString: string): any {
+export function parserYaml(yamlString: string) {
   const jsYaml = parse(yamlString)
   return jsYaml
 }
 
 const currentMap = new Map()
 
-export async function jsYamlToType(jsYaml: any) {
+export async function jsYamlToType(jsYaml: any, path?: string) {
   const { paths } = jsYaml
   const result: any = {}
   for (const url in paths) {
+    if (path && !url.includes(path)) {
+      continue
+    }
     const items = paths[url]
     const temp: any = {}
     result[url] = temp
@@ -47,32 +50,33 @@ export async function jsYamlToType(jsYaml: any) {
 
   function getParameterType(parameters: any) {
     const transformedParameters = parameters.reduce((r: any, param: any) => {
-      const { name, schema } = param
+      const { name, schema = { type: 'string' } } = param
       delete param.schema
+      const properties = r.properties
       switch (schema.type) {
         case 'array': {
-          r[name] = { ...param, type: 'array' }
+          properties[name] = { ...param, type: 'array' }
           break
         }
         case 'integer': {
-          r[name] = { ...param, type: 'number' }
+          properties[name] = { ...param, type: 'number' }
           break
         }
         case 'string': {
-          r[name] = { ...param, type: 'string' }
+          properties[name] = { ...param, type: 'string' }
           break
         }
         case 'object': {
-          r[name] = { ...param, type: 'object' }
+          properties[name] = { ...param, type: 'object' }
           break
         }
         case 'boolean': {
-          r[name] = { ...param, type: 'boolean' }
+          properties[name] = { ...param, type: 'boolean' }
           break
         }
       }
       return r
-    }, {})
+    }, { properties: {}, type: 'object' })
     return getType('ParameterType', transformedParameters)
   }
 
@@ -126,15 +130,15 @@ export async function jsYamlToType(jsYaml: any) {
   return result
 }
 
-const data = fs.readFileSync('./src/test.yaml', 'utf8')
+// const data = fs.readFileSync('./src/test.yaml', 'utf8')
 
-jsYamlToType(parserYaml(data)).then((d) => {
-  fs.writeFile('./src/test.json', JSON.stringify(d, null, 2), (err) => {
-    if (err) {
-      console.error(err)
-      return
-    }
-    // eslint-disable-next-line no-console
-    console.log('File has been created')
-  })
-})
+// jsYamlToType(parserYaml(data)).then((d) => {
+//   fs.writeFile('./src/test.json', JSON.stringify(d, null, 2), (err) => {
+//     if (err) {
+//       console.error(err)
+//       return
+//     }
+//     // eslint-disable-next-line no-console
+//     console.log('File has been created')
+//   })
+// })

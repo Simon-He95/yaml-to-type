@@ -1,7 +1,13 @@
-import { describe, expect, it } from 'vitest'
+import { describe, it } from 'vitest'
 
 describe('should', () => {
-  it('exported', () => {
-    expect(1).toEqual(1)
+  it('exported', async () => {
+    // const yaml = await fsp.readFile('./src/test.yaml', 'utf8')
+    // const yamlJSON = parserYaml(yaml)
+    // const result = await jsYamlToType(yamlJSON, 'appApproveActivity')
+    // for (const key in result) {
+    //   const v = result[key]
+    //   // console.log({ v })
+    // }
   })
 })

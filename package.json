@@ -41,6 +41,7 @@
   ],
   "scripts": {
     "build": "tsup ./src/index.ts --format cjs,esm --dts --clean --minify",
+    "play": "pnpm --filter playground dev",
     "dev": "npm run build -- --watch src",
     "format": "prettier --write --cache .",
     "lint": "eslint . --cache",
@@ -51,6 +52,9 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "quicktype-core": "^23.0.170"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^3.5.1",
     "@types/node": "^18.19.50",
@@ -59,9 +63,9 @@
     "flatted": "^3.3.2",
     "lint-staged": "^13.3.0",
     "lodash-es": "^4.17.21",
+    "monaco-editor": "^0.52.2",
     "picocolors": "^1.1.0",
     "prettier": "^2.8.8",
-    "quicktype-core": "^23.0.170",
     "rimraf": "^3.0.2",
     "tsup": "^6.7.0",
     "tsx": "^3.14.0",

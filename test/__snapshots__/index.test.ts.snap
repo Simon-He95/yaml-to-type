@@ -1,0 +1,382 @@
+// Vitest Snapshot v1
+
+exports[`should > exported 1`] = `
+{
+  "/approve/v1/appApproveActivity": {
+    "get": {
+      "description": "获取审批活动列表",
+      "parameters": "type ParameterType = any;
+",
+      "responses": "export interface ResponseType {
+    items?: Item[];
+    total?: number;
+    [property: string]: any;
+}
+
+export interface Item {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 创建时间
+     */
+    createdAt?: string;
+    /**
+     * 创建人
+     */
+    createdBy?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    id?:       string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    /**
+     * 更新时间
+     */
+    updatedAt?: string;
+    /**
+     * 更新人
+     */
+    updatedBy?: string;
+    [property: string]: any;
+}
+",
+    },
+    "post": {
+      "description": "创建审批活动",
+      "requestBody": "export interface RequestBodyType {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    [property: string]: any;
+}
+",
+      "responses": "export interface ResponseType {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 创建时间
+     */
+    createdAt?: string;
+    /**
+     * 创建人
+     */
+    createdBy?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    id?:       string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    /**
+     * 更新时间
+     */
+    updatedAt?: string;
+    /**
+     * 更新人
+     */
+    updatedBy?: string;
+    [property: string]: any;
+}
+",
+    },
+  },
+  "/approve/v1/appApproveActivity/delete": {
+    "post": {
+      "description": "批量删除审批活动",
+      "requestBody": "export interface RequestBodyType {
+    ids?: string[];
+    [property: string]: any;
+}
+",
+      "responses": "void",
+    },
+  },
+  "/approve/v1/appApproveActivity/{id}": {
+    "delete": {
+      "description": "删除审批活动",
+      "parameters": "type ParameterType = any;
+",
+      "responses": "void",
+    },
+    "get": {
+      "description": "获取审批活动详情",
+      "parameters": "type ParameterType = any;
+",
+      "responses": "export interface ResponseType {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 创建时间
+     */
+    createdAt?: string;
+    /**
+     * 创建人
+     */
+    createdBy?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    id?:       string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    /**
+     * 更新时间
+     */
+    updatedAt?: string;
+    /**
+     * 更新人
+     */
+    updatedBy?: string;
+    [property: string]: any;
+}
+",
+    },
+    "put": {
+      "description": "更新审批活动",
+      "requestBody": "export interface RequestBodyType {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    id?:       string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    [property: string]: any;
+}
+",
+      "responses": "export interface ResponseType {
+    /**
+     * 应用ID
+     */
+    applicationID?: string;
+    /**
+     * 创建时间
+     */
+    createdAt?: string;
+    /**
+     * 创建人
+     */
+    createdBy?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 方法名称
+     */
+    function?: string;
+    id?:       string;
+    /**
+     * 功能模块
+     */
+    moduleID?: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 方法参数
+     */
+    parameters?: string;
+    /**
+     * 项目ID
+     */
+    projectID?: string;
+    /**
+     * 方法返回值
+     */
+    result?: string;
+    /**
+     * 状态：0 禁用、 1启用
+     */
+    status?: number;
+    /**
+     * TeamID
+     */
+    teamID?: string;
+    /**
+     * 更新时间
+     */
+    updatedAt?: string;
+    /**
+     * 更新人
+     */
+    updatedBy?: string;
+    [property: string]: any;
+}
+",
+    },
+  },
+}
+`;
